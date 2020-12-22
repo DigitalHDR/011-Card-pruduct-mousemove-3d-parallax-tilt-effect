@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2? family = Goldman & display = swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Goldman', cursive;
+}
+
+ 
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #131313;
+}
+
+.container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 1200px;
+    transform-style: preserve-3d;
+}
+
+.container .box {
+    position: relative;
+    width: 300px;
+    height: 400px;
+    margin: 40px;
+    background: #232323;
+    border-radius: 20px;
+    transform-style: preserve-3d;
+}
+
+.container .box::before {
+    content: 'ADIDAS';
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    font-size: 3.7em;
+    font-weight: 900;
+    color: #fff;
+    opacity: 0;
+}
+
+.container .box::after {
+    content: 'TÊNIS';
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 4.5em;
+    font-weight: 900;
+    color: #fff;
+    font-style: italic;
+    opacity: 0;
+    transition: .5s;
+}
+
+.container .box:hover::before,
+.container .box:hover::after {
+    opacity: 0.04;
+}
+
+.container .box .name {
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-align: center;
+    color: #fff;
+    width: 100%;
+    transform-style: preserve-3d;
+    transform: translate3d(0,0,75px);
+    transition: .5s;
+    opacity: 0;
+    z-index: 10;
+}
+
+.container .box:hover .name {
+    top: 40px;
+    opacity: 1;
+}
+
+.container .box .buy {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform-style: preserve-3d;
+    transform: translate3d(-50%,0,75px);
+    color: #fff;
+    background: #333;
+    padding: 10px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: .5s;
+    opacity: 0;
+    z-index: 10;
+}
+
+.container .box:hover .buy {
+    opacity: 1;
+    bottom: 30px;
+}
+
+.container .box .circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    transition: .5s;
+    background: #fff;
+    transform-style: preserve-3d;
+    transform: translate3d(-50%,-50%,50px);
+    z-index: 10;
+    opacity: 1;
+}
+
+.container .box .product {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    max-width: 300px;
+    transition: .5s;
+    z-index: 11;
+    transition: .5s;
+    transform-style: preserve-3d;
+    transform: translate3d(-50%,-50%,50px) rotate(-15deg);
+}
+
+.container .box:hover .product {
+    transform: translate3d(-50%,-50%,150px) rotate(5deg);
+
+}
+
+.container .box:nth-child(1) .circle,
+.container .box:nth-child(1) .buy {
+    background: #fff;
+    color: black;
+}
+
+.container .box:nth-child(2) .circle,
+.container .box:nth-child(2) .buy {
+    background: rgb(82, 247, 5);
+    color: black;
+}
+
+.container .box:nth-child(3) .circle,
+.container .box:nth-child(3) .buy {
+    background: rgb(5, 199, 247);
+    color: black;
+}
